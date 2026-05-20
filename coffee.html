@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coffee AR</title>
+
+<script type="module"
+src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
+</script>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial,sans-serif;
+background:white;
+}
+
+model-viewer{
+width:100vw;
+height:100vh;
+}
+
+.top{
+position:absolute;
+top:20px;
+width:100%;
+text-align:center;
+z-index:10;
+}
+
+.cafe{
+font-size:34px;
+font-weight:bold;
+}
+
+.price{
+font-size:22px;
+margin-top:5px;
+}
+
+#ar-button{
+background:black;
+color:white;
+border:none;
+padding:12px 24px;
+border-radius:14px;
+font-size:18px;
+position:absolute;
+top:110px;
+left:50%;
+transform:translateX(-50%);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top">
+<div class="cafe">ContentRush.AI</div>
+<div class="price">Coffee - ₹100</div>
+</div>
+
+<model-viewer
+src="coffee.glb"
+scale="0.05 0.05 0.05"
+ar
+ar-modes="scene-viewer webxr quick-look"
+camera-controls
+auto-rotate>
+
+<button slot="ar-button" id="ar-button">
+View In AR
+</button>
+
+</model-viewer>
+
+</body>
+</html>
